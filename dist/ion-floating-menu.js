@@ -74,10 +74,11 @@
                 menuIconColor: '@?',
                 hasFooter: '=?',
                 backdrop: '=?',
-                bottom: '@?'
+                bottom: '@?',
+                inTop: '@?'
             },
             template: '<ul id="floating-menu"  \n\
-                            ng-style="{\'bottom\' : \'{{bottom}}\'}" \n\
+                            ng-style="{\'bottom\' : \'{{bottom}}\',\'top\' : \'{{top}}}" \n\
                             ng-class="{\'active\' : isOpen}" \n\
                             ng-click="open()">' +
                     '<div ng-transclude></div>' +
@@ -157,7 +158,10 @@
         var backdrop = $scope.backdrop || false;
         $scope.setClose();
         $scope.hasFooter = $scope.hasFooter || false;
-        if ($scope.hasFooter) {
+        if ($scope.inTop) {
+            $scope.bottom = '0';
+            $scope.top = '20px';
+        } else if ($scope.hasFooter) {
             $scope.bottom = '60px';
         } else {
             $scope.bottom = $scope.bottom || '20px';
