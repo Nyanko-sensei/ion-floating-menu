@@ -78,8 +78,8 @@
                 inTop: '@?'
             },
             template: '<ul id="floating-menu"  \n\
-                            ng-style="{\'bottom\' : \'{{bottom}}\',\'top\' : \'{{top}}}" \n\
-                            ng-class="{\'active\' : isOpen}" \n\
+                            ng-style="{\'bottom\' : \'{{bottom}}\',\'top\' : \'{{top}}\'}" \n\
+                            ng-class="{\'active\' : isOpen, \'top\' : inTop}" \n\
                             ng-click="open()">' +
                     '<div ng-transclude></div>' +
                     '<span><li class="menu-button icon menu-icon" ng-class="icon" ng-style="{\'background-color\' : buttonColor, \'color\': iconColor}"></li></span>' +
